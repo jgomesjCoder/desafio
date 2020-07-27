@@ -1,0 +1,14 @@
+{
+    "folders": [
+		{
+			"path": "..\\server"
+		}
+	],
+    "settings": {
+        "jshint.config": "",
+        "jshint.options": {
+            "esversion": 8
+        },
+        "extensions.confirmedUriHandlerExtensionIds": []
+    }
+}
