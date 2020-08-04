@@ -61,8 +61,9 @@ const createUser = async(req, res) => {
     const { name, email, password } = req.body;
     try {
         const userVerify = await pool.query('SELECT * FROM users WHERE email = $1', [email]);
+        console.log(userVerify)
         if (userVerify) {
-            throw new Error('Usuario ja existe');
+            throw new Error('Email ja esta em uso');
         }
         const hashedPassword = await hash(password, 10);
         const response = await pool.query('INSERT INTO users ( name, email, password) VALUES ($1, $2, $3)', [name, email, hashedPassword]);
